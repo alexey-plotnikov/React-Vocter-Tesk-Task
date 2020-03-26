@@ -1,0 +1,10 @@
+.footer-wrapper {
+  width: 1366px;
+  height: 181px;
+  background-color: #010b13;
+  font-size: 28px;
+  color: #ffffff;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-style: italic;
+}

@@ -1,0 +1,12 @@
+.grid-view-wrapper {
+    width: 250px;
+}
+
+.grid-view-poster {
+    width: 218px;
+    height: 331px;
+    border-radius: 3px;
+    background-color: #010b13;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

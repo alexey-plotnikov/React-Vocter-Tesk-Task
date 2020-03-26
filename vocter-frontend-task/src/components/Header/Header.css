@@ -1,0 +1,10 @@
+.header-wrapper {
+  width: 1366px;
+  height: 60px;
+  background-color: #389ef2;
+  font-size: 28px;
+  color: #ffffff;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-style: italic;
+}
