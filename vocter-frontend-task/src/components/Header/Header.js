@@ -1,15 +1,29 @@
 import React from 'react';
+
+import {HeaderConstants} from 'common/constants';
 import './Header.css'
 
-class Header extends React.Component {
+const Header = (props) => {
 
-    render() {
-        return(
-            <div className='header-wrapper'>
-                header works
+    return (
+        <div className='header-wrapper'>
+            <div className='header-title'>
+                {HeaderConstants.KABOODLE}
             </div>
-        );
-    }
+            <div className='header-tagline'>
+                {HeaderConstants.TAGLINE}
+            </div>
+            <div className='header-sign-up'>
+                {HeaderConstants.SIGHT_UP}
+            </div>
+            <div className='header-log-in'>
+                {HeaderConstants.LOG_IN}
+            </div>
+            <div className='header-about'>
+                {HeaderConstants.ABOUT}
+            </div>
+        </div>
+    );
 }
 
 export default Header;

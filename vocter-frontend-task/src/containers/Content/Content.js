@@ -2,32 +2,29 @@ import React from 'react';
 
 import Menu from 'components/Menu/Menu';
 import ComingSoon from 'containers/ComingSoon/ComingSoon';
-import MostPopular from 'containers/MostPopular/MostPopular'
+import MostPopular from 'containers/MostPopular/MostPopular';
+
+
+import MenuHeaderValues from 'common/menuHeaderValues';
+import { ApiConstants, MenuHeaderConstants } from 'common/constants';
 
 
 class Content extends React.Component {
-
-    filmsListUrl = 'https://api.myjson.com/bins/p2dnz';
-
-    view = {
-        GRID: 'GRID',
-        LIST: 'LIST'
-    }
 
     constructor() {
         super();
 
         this.state = {
             films: [],
-            comingSoonTitle: 'Coming Soon',
-            mostPopularTitle: 'Most Popular',
-            comingSoonView: 'GRID',
-            mostPopularView: 'GRID',
+            filtredComingSoonFilms: [],
+            filtredMostPopularFilms: [],
+            comingSoonView: MenuHeaderValues.GRID,
+            mostPopularView: MenuHeaderValues.GRID,
         }
     }
 
     componentDidMount() {
-        fetch('https://api.myjson.com/bins/p2dnz', {
+        fetch(ApiConstants.FILM_URL, {
             method: 'GET',
         })
             .then(response => response.json())
@@ -35,10 +32,63 @@ class Content extends React.Component {
                 this.setState({
                     films: jsonData,
                 });
+                this.initialSorting()
             })
             .catch(error => {
                 console.error(error);
             });
+    }
+
+    initialSorting() {
+        const { films } = this.state;
+
+        let filtredComingSoonFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.EXPECTATION_COUNT));
+        let filtredMostPopularFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.RANK));
+
+        this.setState({
+            filtredComingSoonFilms: filtredComingSoonFilms,
+            filtredMostPopularFilms: filtredMostPopularFilms
+        })
+    }
+
+    // .then(jsonData => this.someMethod(jsonDatqa))
+    // someMethod(sr) {
+    //     this.setState({
+    //         films: jsonData,
+    //         filtredComingSoonFilms: jsonData,
+    //         filtredMostPopularFilms: jsonData
+    //     });
+    // }
+
+    sortingByFilmType(type) {
+        const { films } = this.state;
+        let filteredFilms = films;
+
+        if (type !== MenuHeaderValues.ALL) {
+            filteredFilms = films.filter((film) => film.type === type);
+        }
+        return filteredFilms;
+    }
+
+    sortComingSoon(type) {
+
+        const { films } = this.state;
+        let filteredFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.EXPECTATION_COUNT));;
+
+        if (type !== MenuHeaderValues.ALL) {
+            filteredFilms = filteredFilms.filter((film) => film.type === type);
+        }
+
+        this.setState({
+            filtredComingSoonFilms: filteredFilms
+        })
+    }
+
+    sortMostPopular(type) {
+        let filteredFilms = this.sortingByFilmType(type);
+        this.setState({
+            filtredMostPopularFilms: filteredFilms
+        })
     }
 
     loadComingSoonView(view) {
@@ -54,22 +104,24 @@ class Content extends React.Component {
     }
 
     render() {
-        const { films, comingSoonTitle, mostPopularTitle, comingSoonView, mostPopularView } = this.state;
+        const { films, filtredComingSoonFilms, filtredMostPopularFilms, comingSoonView, mostPopularView } = this.state;
 
         return (
             <div>
                 <Menu
-                    title={comingSoonTitle}
+                    title={MenuHeaderConstants.COMING_SOON}
+                    sortByType={(type) => this.sortComingSoon(type)}
                     loadView={(view) => this.loadComingSoonView(view)} />
                 <ComingSoon
-                    films={films}
+                    films={filtredComingSoonFilms}
                     view={comingSoonView} />
 
                 <Menu
-                    title={mostPopularTitle}
+                    title={MenuHeaderConstants.MOST_POPULAR}
+                    sortByType={(type) => this.sortMostPopular(type)}
                     loadView={(view) => this.loadMostPopularView(view)} />
                 <MostPopular
-                    films={films}
+                    films={filtredMostPopularFilms}
                     view={mostPopularView} />
             </div>
         );

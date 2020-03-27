@@ -3,28 +3,18 @@ import Slider from "react-slick";
 
 import GridView from 'components/GridView/GridView';
 import ListView from 'components/ListView/ListView';
-
-
+import SliderSettings from 'common/sliderSettings';
 
 class ComingSoon extends React.Component {
 
     render() {
-
-        const settings = {
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            adaptiveHeight: true
-        };
 
         const { films, view } = this.props;
 
         if (view === 'GRID') {
             return (
                 <div>
-                    <Slider {...settings}>
+                    <Slider {...SliderSettings.HORIZONTAL}>
                         {
                             films.map(({ id, title, year, director,
                                 writer, poster, genres, type,
@@ -45,23 +35,22 @@ class ComingSoon extends React.Component {
         } else if (view === 'LIST') {
             return (
                 <div>
-                    <ul>
+                    <Slider {...SliderSettings.VERTICAL}>
                         {
                             films.map(({ id, title, year, director,
                                 writer, poster, genres, type,
                                 rang, likes_count, comments_count,
                                 link, expectations_count, content }) => (
-                                    <li key={id}>
-                                        <ListView
-                                            title={title}
-                                            year={year}
-                                            director={director}
-                                            poster={poster} />
-                                    </li>
+                                    <ListView
+                                        key={id}
+                                        title={title}
+                                        year={year}
+                                        director={director}
+                                        poster={poster}
+                                    />
                                 ))
                         }
-                    </ul>
-
+                    </Slider>
                 </div>
             )
         }
