@@ -1,33 +1,50 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-@font-face {
-  font-family: 'Roboto Condensed';
-  src: local('Roboto Condensed'), url(assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf) format('truetype');
+a {
+  text-decoration: none;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed Italic';
-  src: local('Roboto Condensed Italic'), url(assets/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf) format('truetype');
+  font-family: "Roboto Condensed";
+  src: local("Roboto Condensed"),
+    url(assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf)
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'Roboto Condensed Light';
-  src: local('Roboto Condensed Light'), url(assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf) format('truetype');
+  font-family: "Roboto Condensed Italic";
+  src: local("Roboto Condensed Italic"),
+    url(assets/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf)
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'Roboto Bold';
-  src: local('Roboto Bold'), url(assets/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  font-family: "Roboto Condensed Light";
+  src: local("Roboto Condensed Light"),
+    url(assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: local("Roboto Bold"),
+    url(assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: local("Proxima Nova Bold"),
+    url(assets/fonts/FontsFree-Net-Proxima-Nova-Bold.otf) format("truetype");
 }

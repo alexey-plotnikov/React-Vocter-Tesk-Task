@@ -1,9 +1,8 @@
 import React from 'react';
-import Slider from "react-slick";
 
+import MenuHeaderValues from 'common/menuHeaderValues';
 import GridView from 'components/GridView/GridView';
 import ListView from 'components/ListView/ListView';
-import SliderSettings from 'common/sliderSettings';
 
 class ComingSoon extends React.Component {
 
@@ -11,47 +10,15 @@ class ComingSoon extends React.Component {
 
         const { films, view } = this.props;
 
-        if (view === 'GRID') {
+        if (view === MenuHeaderValues.GRID) {
             return (
-                <div>
-                    <Slider {...SliderSettings.HORIZONTAL}>
-                        {
-                            films.map(({ id, title, year, director,
-                                writer, poster, genres, type,
-                                rang, likes_count, comments_count,
-                                link, expectations_count, content }) => (
-                                    <GridView
-                                        key={id}
-                                        title={title}
-                                        year={year}
-                                        director={director}
-                                        poster={poster}
-                                    />
-                                ))
-                        }
-                    </Slider>
-                </div>
+                <GridView
+                    films={films} />
             );
-        } else if (view === 'LIST') {
+        } else if (view === MenuHeaderValues.LIST) {
             return (
-                <div>
-                    <Slider {...SliderSettings.VERTICAL}>
-                        {
-                            films.map(({ id, title, year, director,
-                                writer, poster, genres, type,
-                                rang, likes_count, comments_count,
-                                link, expectations_count, content }) => (
-                                    <ListView
-                                        key={id}
-                                        title={title}
-                                        year={year}
-                                        director={director}
-                                        poster={poster}
-                                    />
-                                ))
-                        }
-                    </Slider>
-                </div>
+                <ListView
+                    films={films} />
             )
         }
 

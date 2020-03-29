@@ -1,0 +1,35 @@
+.grid-view-item-wrapper {
+  width: 250px;
+
+  img {
+    width: 218px;
+    height: 331px;
+    border-radius: 3px;
+    background-color: #010b13;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.grid-view-item-title {
+  font-size: 20px;
+  color: #010b13;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.grid-view-item-year {
+  font-size: 20px;
+  color: #010b13;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.grid-view-item-navbar {
+  div {
+    font-size: 13px;
+    color: #010b13;
+    font-family: "Proxima Nova Bold";
+    text-align: center;
+  }
+}

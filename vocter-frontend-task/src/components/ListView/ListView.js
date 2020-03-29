@@ -1,18 +1,38 @@
 import React from 'react';
-import './ListView.css'
+import Slider from "react-slick";
 
-const ListView = (props) => {
-    const { title, year, director, poster } = props;
+import ListViewItem from 'components/ListView/ListViewItem';
+import SliderSettings from 'common/sliderSettings';
+import './ListView.scss'
+
+const ListVIew = (props) => {
+
+    const { films } = props;
 
     return (
-        <div className='list-view-wrapper'>
-            <div className='list-view-poster' style={{ backgroundImage: "url(" + poster + ")" }}>
-            </div>
-            {title}
-            {year}
-
+        <div>
+            <Slider {...SliderSettings.VERTICAL}>
+                {
+                    films.map(({ id, title, year, director,
+                        writer, poster, genres, type,
+                        rank, likes_count, comments_count,
+                        link, expectations_count, content }) => (
+                            <ListViewItem
+                                key={id}
+                                title={title}
+                                year={year}
+                                poster={poster}
+                                content={content}
+                                commentsCount={comments_count}
+                                rank={rank}
+                                expectationsCount={expectations_count}
+                                likesCount={likes_count}
+                            />
+                        ))
+                }
+            </Slider>
         </div>
-    );
+    )
 }
 
-export default ListView;
+export default ListVIew;

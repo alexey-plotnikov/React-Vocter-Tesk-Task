@@ -25,5 +25,6 @@ export const FooterConstants = {
     CONTACT: 'Contact',
     TERMS_CONDITIONS: 'T&Cs',
     PRIVACY_POLICY: 'Privacy Policy',
-    COPIRIGHT: 'Copiright 2016 - All Rights Reserved'
+    COPYRIGHT: 'Copiright '+ new Date().getFullYear() +' - All Rights Reserved',
+    VERTICAL_LINE: '|'
 };

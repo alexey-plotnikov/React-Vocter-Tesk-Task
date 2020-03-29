@@ -15,11 +15,14 @@ class Content extends React.Component {
         super();
 
         this.state = {
-            films: [],
+            comingSoonFilms: [],
+            mostPopularFilms: [],
             filtredComingSoonFilms: [],
             filtredMostPopularFilms: [],
             comingSoonView: MenuHeaderValues.GRID,
             mostPopularView: MenuHeaderValues.GRID,
+            comingSoonActiveBtn: MenuHeaderValues.ALL,
+            mostPopularActiveBtn: MenuHeaderValues.ALL
         }
     }
 
@@ -29,66 +32,51 @@ class Content extends React.Component {
         })
             .then(response => response.json())
             .then(jsonData => {
-                this.setState({
-                    films: jsonData,
-                });
-                this.initialSorting()
+                this.initialSorting(jsonData);
             })
             .catch(error => {
                 console.error(error);
             });
     }
 
-    initialSorting() {
-        const { films } = this.state;
+    initialSorting(data) {
 
-        let filtredComingSoonFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.EXPECTATION_COUNT));
-        let filtredMostPopularFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.RANK));
+        let filtredComingSoonFilms = data.filter((film) => film.hasOwnProperty(MenuHeaderValues.EXPECTATION_COUNT));
+        let filtredMostPopularFilms = data.filter((film) => film.hasOwnProperty(MenuHeaderValues.RANK));
 
         this.setState({
+            comingSoonFilms: filtredComingSoonFilms,
+            mostPopularFilms: filtredMostPopularFilms,
             filtredComingSoonFilms: filtredComingSoonFilms,
             filtredMostPopularFilms: filtredMostPopularFilms
         })
     }
 
-    // .then(jsonData => this.someMethod(jsonDatqa))
-    // someMethod(sr) {
-    //     this.setState({
-    //         films: jsonData,
-    //         filtredComingSoonFilms: jsonData,
-    //         filtredMostPopularFilms: jsonData
-    //     });
-    // }
-
-    sortingByFilmType(type) {
-        const { films } = this.state;
-        let filteredFilms = films;
+    sortingByFilmType(sectionType, type) {
+        let filteredFilms = sectionType;
 
         if (type !== MenuHeaderValues.ALL) {
-            filteredFilms = films.filter((film) => film.type === type);
+            filteredFilms = sectionType.filter((film) => film.type === type);
         }
         return filteredFilms;
     }
 
-    sortComingSoon(type) {
-
-        const { films } = this.state;
-        let filteredFilms = films.filter((film) => film.hasOwnProperty(MenuHeaderValues.EXPECTATION_COUNT));;
-
-        if (type !== MenuHeaderValues.ALL) {
-            filteredFilms = filteredFilms.filter((film) => film.type === type);
-        }
+    sortComingSoon(type, typeConst) {
+        const { comingSoonFilms } = this.state;
 
         this.setState({
-            filtredComingSoonFilms: filteredFilms
-        })
+            filtredComingSoonFilms: this.sortingByFilmType(comingSoonFilms, type),
+            comingSoonActiveBtn: typeConst
+        });
     }
 
-    sortMostPopular(type) {
-        let filteredFilms = this.sortingByFilmType(type);
+    sortMostPopular(type, typeConst) {
+        const { mostPopularFilms } = this.state;
+
         this.setState({
-            filtredMostPopularFilms: filteredFilms
-        })
+            filtredMostPopularFilms: this.sortingByFilmType(mostPopularFilms, type),
+            mostPopularActiveBtn: typeConst
+        });
     }
 
     loadComingSoonView(view) {
@@ -104,22 +92,30 @@ class Content extends React.Component {
     }
 
     render() {
-        const { films, filtredComingSoonFilms, filtredMostPopularFilms, comingSoonView, mostPopularView } = this.state;
+        const { filtredComingSoonFilms,
+            filtredMostPopularFilms,
+            comingSoonView,
+            mostPopularView,
+            comingSoonActiveBtn,
+            mostPopularActiveBtn } = this.state;
 
         return (
             <div>
                 <Menu
                     title={MenuHeaderConstants.COMING_SOON}
-                    sortByType={(type) => this.sortComingSoon(type)}
-                    loadView={(view) => this.loadComingSoonView(view)} />
+                    sortByType={(type, typeConst) => this.sortComingSoon(type, typeConst)}
+                    loadView={(view) => this.loadComingSoonView(view)}
+                    activeBtn={comingSoonActiveBtn}
+                />
                 <ComingSoon
                     films={filtredComingSoonFilms}
                     view={comingSoonView} />
 
                 <Menu
                     title={MenuHeaderConstants.MOST_POPULAR}
-                    sortByType={(type) => this.sortMostPopular(type)}
-                    loadView={(view) => this.loadMostPopularView(view)} />
+                    sortByType={(type, typeConst) => this.sortMostPopular(type, typeConst)}
+                    loadView={(view) => this.loadMostPopularView(view)}
+                    activeBtn={mostPopularActiveBtn} />
                 <MostPopular
                     films={filtredMostPopularFilms}
                     view={mostPopularView} />
