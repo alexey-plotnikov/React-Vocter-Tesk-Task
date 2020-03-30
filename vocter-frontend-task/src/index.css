@@ -40,19 +40,31 @@ a {
 }
 
 @font-face {
+  font-family: "Roboto";
+  src: local("Roboto"),
+    url(assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
   font-family: "Roboto Bold";
   src: local("Roboto Bold"),
     url(assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: local("Roboto "),
-    url(assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  font-family: "Roboto Italic";
+  src: local("Roboto Italic"),
+    url(assets/fonts/Roboto/Roboto-Italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Bold Italic";
+  src: local("Roboto Bold Italic"),
+    url(assets/fonts/Roboto/Roboto-BoldItalic.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Proxima Nova Bold";
   src: local("Proxima Nova Bold"),
-    url(assets/fonts/FontsFree-Net-Proxima-Nova-Bold.otf) format("truetype");
+    url(assets/fonts/Roboto/Roboto-BoldItalic.ttf) format("truetype");
 }
