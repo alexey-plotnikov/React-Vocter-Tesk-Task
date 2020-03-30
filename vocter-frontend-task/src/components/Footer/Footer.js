@@ -3,13 +3,10 @@ import React from 'react';
 import { FooterConstants } from 'common/constants';
 import './Footer.scss';
 
-import logo from 'assets/img/footer-logo.svg';
-
 const Footer = (props) => {
 
     return (
         <div className='footer-wrapper'>
-            <div className='footer-logo'></div>
             <div className='footer-middle-bar'>
                 <a className='footer-title' href='/'>
                     <span className='title'>

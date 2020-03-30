@@ -105,6 +105,7 @@ class Content extends React.Component {
                     title={MenuHeaderConstants.COMING_SOON}
                     sortByType={(type, typeConst) => this.sortComingSoon(type, typeConst)}
                     loadView={(view) => this.loadComingSoonView(view)}
+                    view={comingSoonView}
                     activeBtn={comingSoonActiveBtn}
                 />
                 <ComingSoon
@@ -115,6 +116,7 @@ class Content extends React.Component {
                     title={MenuHeaderConstants.MOST_POPULAR}
                     sortByType={(type, typeConst) => this.sortMostPopular(type, typeConst)}
                     loadView={(view) => this.loadMostPopularView(view)}
+                    view={mostPopularView}
                     activeBtn={mostPopularActiveBtn} />
                 <MostPopular
                     films={filtredMostPopularFilms}

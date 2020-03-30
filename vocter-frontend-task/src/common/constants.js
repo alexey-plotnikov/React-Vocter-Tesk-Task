@@ -15,8 +15,15 @@ export const MenuHeaderConstants = {
     MOST_POPULAR: 'Most Popular',
     ALL: 'All',
     MOVIES: 'Movies',
-    TV_SHOWS: 'TV Shows'
+    TV_SHOWS: 'TV Shows',
+    ACTIVE_BUTTON: 'btn-active',
+    ACTIVE_VIEW_BUTTON: 'btn-view-active',
 };
+
+export const GridVIewItemConstants = {
+    TV_SHOW: 'tvshow-type-icon',
+    MOVIE: 'movie-type-icon'
+}
 
 export const FooterConstants = {
     KABOODLE: 'Kaboodle',

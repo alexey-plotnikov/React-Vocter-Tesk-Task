@@ -10,7 +10,7 @@ const GridView = (props) => {
     const { films } = props;
 
     return (
-        <div className='test'>
+        <div className='grid-view-wrapper'>
             <Slider {...SliderSettings.HORIZONTAL}>
                 {
                     films.map(({ id, title, year, director,
@@ -24,6 +24,7 @@ const GridView = (props) => {
                                 poster={poster}
                                 commentsCount={comments_count}
                                 likesCount={likes_count}
+                                type={type}
                                 rank={rank}
                                 expectationsCount={expectations_count}
                             />
