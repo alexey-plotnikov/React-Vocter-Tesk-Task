@@ -15,42 +15,41 @@ const Footer = (props) => {
                 </a>
                 <div className='footer-nav-bar'>
                     <a href='/'>
-                        <span>
+                        <span className='frequently-asked-question'>
                             {FooterConstants.FAQ}
                         </span>
                     </a>
-                    <div className='footer-vertical-line'>
+                    <span className='footer-vertical-line'>
                         {FooterConstants.VERTICAL_LINE}
-                    </div>
+                    </span>
                     <a href='/'>
-                        <span>
+                        <span className='feedback'>
                             {FooterConstants.FEEDBACK}
                         </span>
                     </a>
-                    <div className='footer-vertical-line'>
+                    <span className='footer-vertical-line'>
                         {FooterConstants.VERTICAL_LINE}
-                    </div>
+                    </span>
                     <a href='/'>
-                        <span>
+                        <span className='contact'>
                             {FooterConstants.CONTACT}
                         </span>
                     </a>
-                    <div className='footer-vertical-line'>
+                    <span className='footer-vertical-line'>
                         {FooterConstants.VERTICAL_LINE}
-                    </div>
+                    </span>
                     <a href='/'>
-                        <span>
+                        <span className='terms-conditions'>
                             {FooterConstants.TERMS_CONDITIONS}
                         </span>
                     </a>
-                    <div className='footer-vertical-line'>
+                    <span className='footer-vertical-line'>
                         {FooterConstants.VERTICAL_LINE}
-                    </div>
+                    </span>
                     <a href='/'>
-                        <span>
+                        <span className='privacy-policy'>
                             {FooterConstants.PRIVACY_POLICY}
                         </span>
-
                     </a>
                 </div>
                 <div className='footer-copyright'>
@@ -62,7 +61,6 @@ const Footer = (props) => {
 
         </div>
     );
-
 }
 
 export default Footer;

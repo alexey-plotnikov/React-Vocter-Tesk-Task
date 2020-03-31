@@ -1,0 +1,51 @@
+.list-view-wrapper {
+  position: relative;
+  width: 1366px;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.previous-slider-button-wrapper {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  padding-top: 30px;
+  z-index: 1;
+
+  .previous-slider-button {
+    display: flex;
+    width: 25px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: 115px;
+    background-image: url(../../assets/img/verticali-slider-arrows.svg);
+    background-repeat: no-repeat;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.next-slider-button-wrapper {
+  position: absolute;
+  display: flex;
+  height: 20px;
+  width: 100%;
+  z-index: 1;
+
+  .next-slider-button {
+    display: flex;
+    width: 25px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: 115px;
+    background-image: url(../../assets/img/verticali-slider-arrows.svg);
+    background-repeat: no-repeat;
+    transform: rotate(-180deg);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

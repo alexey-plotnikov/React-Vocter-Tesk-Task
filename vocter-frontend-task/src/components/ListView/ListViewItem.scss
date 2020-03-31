@@ -1,14 +1,222 @@
-.list-view-wrapper {
-  img {
+.list-view-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+  margin-top: 30px;
+}
+
+.list-view-poster-wrapper {
+  width: 120px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 115px;
+
+  .play-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .play-icon-background {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .play-icon {
+      width: 24px;
+      height: 24px;
+      background: url(../../assets/img/play-button.svg) no-repeat;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .poster-fogging {
+    position: absolute;
     width: 103px;
     height: 156px;
-    border-radius: 3px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    border-radius: 5px;
+    z-index: -1;
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  .poster {
+    position: absolute;
+    width: 103px;
+    height: 156px;
+    z-index: -2;
+  }
+
+  .poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
   }
 }
 
+.list-view-rating-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  margin-right: 20px;
 
-.test-123 {
-  height: 500px;
+  .rating-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+  }
+
+  .no-rating-icon-wrapper {
+    .no-rating-icon {
+      width: 90px;
+      height: 90px;
+      background-image: url(../../assets/img/products/actions/gradeless.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.list-view-film-information-wrapper {
+  width: 830px;
+  height: 156px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 16px;
+    color: #389ef2;
+    font-family: "Roboto Condensed Bold";
+  }
+
+  .infromation-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .year,
+    .director,
+    .writer,
+    .vertical-line {
+      margin-right: 5px;
+      font-size: 16px;
+      color: #010b13;
+      font-family: "Roboto Condensed Bold";
+    }
+  }
+
+  .film-content {
+    height: 100%;
+    padding-top: 10px;
+    font-size: 16px;
+    color: #808080;
+    font-family: "Roboto Condensed";
+  }
+
+  .stats-wrapper {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-self: baseline;
+  }
+
+  .stats-icon-wrapper {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 35px;
+  }
+
+  .share-icon-wrapper {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stats-number,
+  .vertical-line {
+    font-size: 18px;
+    color: #010b13;
+    font-family: "Roboto Condensed Bold";
+  }
+
+  .share-icon {
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../assets/img/products/actions/share.svg);
+    background-repeat: no-repeat;
+  }
+
+  .comments-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url(../../assets/img/products/actions/comment.svg);
+    background-repeat: no-repeat;
+  }
+
+  .ratings-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+
+  .gradeless-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url(../../assets/img/products/actions/gradeless.svg);
+    background-repeat: no-repeat;
+  }
+
+  .likes-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url(../../assets/img/products/actions/heart.svg);
+    background-repeat: no-repeat;
+  }
+
+  .read-more-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .read-more {
+      font-size: 16px;
+      color: #389ef2;
+      font-family: "Roboto Condensed Bold";
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

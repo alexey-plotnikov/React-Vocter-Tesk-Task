@@ -16,12 +16,6 @@ const GridViewItem = (props) => {
             return GridVIewItemConstants.TV_SHOW;
         };
     }
-    const percentage = 66;
-
-    const settings = {
-
-
-    }
 
     return (
         <div className='grid-view-item-wrapper'>
@@ -34,7 +28,7 @@ const GridViewItem = (props) => {
                 </span>
             </div>
 
-            <div className='poster-wrapper'>
+            <div className='grid-view-poster-wrapper'>
                 <div className='play-icon-wrapper'>
                     <span className='play-icon-background'>
                         <span className='icon play-icon'></span>
@@ -55,60 +49,39 @@ const GridViewItem = (props) => {
                     <img src={poster} alt='' />
                 </div>
             </div>
-            <div className='stats-wrapper'>
+            <div className='grid-view-stats-wrapper'>
                 <span className="stats-icon-wrapper">
                     <a href="/" className="share-button">
                         <span className="icon share-icon"></span>
                     </a>
                 </span>
                 <span className="stats-icon-wrapper">
+                    <span className='stats-number'>{commentsCount}</span>
                     <a href="/">
-                        <span className='stats-number'>{commentsCount}</span>
                         <span className="icon comments-icon"></span>
                     </a>
                 </span>
                 {rank && <span className="stats-icon-wrapper">
+                    <span className='stats-number'>{rank}</span>
                     <a href="/">
-                        <span className='stats-number'>{rank}</span>
                         <span className="icon ratings-icon">
                             <CircularProgressbar {...ProgressBarSettings.STATS_BAR_SETTINGS} text={rank} value={rank} />
                         </span>
                     </a>
                 </span>}
                 {expectationsCount && <span className="stats-icon-wrapper">
+                    <span className='stats-number'>{expectationsCount}</span>
                     <a href="/">
-                        <span className='stats-number'>{expectationsCount}</span>
                         <span className="icon gradeless-icon"></span>
                     </a>
                 </span>}
                 <span className="stats-icon-wrapper">
+                    <span className='stats-number'>{likesCount}</span>
                     <a href="/">
-                        <span className='stats-number'>{likesCount}</span>
                         <span className="icon likes-icon"></span>
                     </a>
                 </span>
             </div>
-
-
-
-            {/* <span className='grid-view-item-navbar'>
-                <div className='grid-view-item-comments'>
-                    {commentsCount}
-                </div>
-                <div>
-                    {likesCount}
-                </div>
-                {rank && <div>
-                    {rank}
-                </div>}
-
-                {expectationsCount && <div>
-                    {expectationsCount}
-                </div>}
-            </span> */}
-
-
-
         </div>
     );
 }

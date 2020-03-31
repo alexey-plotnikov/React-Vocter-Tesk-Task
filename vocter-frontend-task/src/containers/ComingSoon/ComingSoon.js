@@ -21,7 +21,6 @@ class ComingSoon extends React.Component {
                     films={films} />
             )
         }
-
     }
 }
 

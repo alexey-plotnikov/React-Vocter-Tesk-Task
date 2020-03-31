@@ -5,7 +5,7 @@ export default {
         speed: 500,
         slidesToShow: 4,
         swipeToSlide: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
     },
 
     VERTICAL: {

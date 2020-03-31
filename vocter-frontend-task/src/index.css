@@ -1,4 +1,6 @@
 @import url(~react-circular-progressbar/dist/styles.css);
+@import url(~slick-carousel/slick/slick.css);
+@import url(~slick-carousel/slick/slick-theme.css);
 
 body {
   margin: 0;
@@ -22,6 +24,13 @@ a {
   font-family: "Roboto Condensed";
   src: local("Roboto Condensed"),
     url(assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Condensed Bold";
+  src: local("Roboto Condensed Bold"),
+    url(assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf)
       format("truetype");
 }
 

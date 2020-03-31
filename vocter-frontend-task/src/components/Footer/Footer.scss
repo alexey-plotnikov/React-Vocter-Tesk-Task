@@ -9,17 +9,6 @@
   background-color: #010b13;
 }
 
-// .footer-logo {
-//   position: absolute;
-//   width: 350px;
-//   height: 350px;
-//   bottom: 0;
-//   background-image: url(../../assets/img/header-logo.svg);
-//   background-repeat: no-repeat;
-
-//   z-index: 1;
-// }
-
 .footer-middle-bar {
   display: flex;
   justify-content: center;
@@ -45,21 +34,18 @@
   justify-content: center;
   margin-bottom: 25px;
 
-  span {
+  .frequently-asked-question,
+  .feedback,
+  .contact,
+  .terms-conditions,
+  .privacy-policy,
+  .footer-vertical-line{
     font-size: 25px;
     color: #ffffff;
     font-family: "Roboto Condensed Italic";
     font-weight: 400;
     margin-right: 10px;
   }
-}
-
-.footer-vertical-line {
-  font-size: 25px;
-  color: #ffffff;
-  font-family: "Roboto Condensed Italic";
-  font-weight: 400;
-  margin-right: 10px;
 }
 
 .footer-copyright {

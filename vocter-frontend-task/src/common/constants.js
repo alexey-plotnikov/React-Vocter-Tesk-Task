@@ -25,6 +25,13 @@ export const GridVIewItemConstants = {
     MOVIE: 'movie-type-icon'
 }
 
+export const ListViewItemConstants = {
+    DIRECTOR: 'Director: ',
+    WRITER: 'Writer: ',
+    VERTICAL_LINE: '|',
+    READ_MORE: 'Read more'
+}
+
 export const FooterConstants = {
     KABOODLE: 'Kaboodle',
     FAQ: 'FAQ',
@@ -32,6 +39,6 @@ export const FooterConstants = {
     CONTACT: 'Contact',
     TERMS_CONDITIONS: 'T&Cs',
     PRIVACY_POLICY: 'Privacy Policy',
-    COPYRIGHT: 'Copiright '+ new Date().getFullYear() +' - All Rights Reserved',
+    COPYRIGHT: 'Copiright ' + new Date().getFullYear() + ' - All Rights Reserved',
     VERTICAL_LINE: '|'
 };

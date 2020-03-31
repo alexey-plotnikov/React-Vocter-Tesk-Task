@@ -18,35 +18,109 @@
   }
 }
 
-.poster-wrapper {
+.grid-view-poster-wrapper {
   display: flex;
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 345px;
-}
+  height: 335px;
 
-.poster-fogging {
-  position: absolute;
-  width: 218px;
-  height: 331px;
-  border-radius: 5px;
-  z-index: -1;
-  background-color: black;
-  opacity: 0.5;
-}
+  .play-icon-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+  }
 
-.poster {
-  position: absolute;
-  width: 218px;
-  height: 331px;
-  z-index: -2;
-}
+  .play-icon-background {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.poster img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
+    .play-icon {
+      width: 24px;
+      height: 24px;
+      background: url(../../assets/img/play-button.svg) no-repeat;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .film-type-icon-wrapper {
+    margin-top: 8px;
+    margin-left: 15px;
+
+    .movie-type-icon {
+      width: 40px;
+      height: 30px;
+
+      background-image: url(../../assets/img/movie-type.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .tvshow-type-icon {
+      width: 40px;
+      height: 30px;
+
+      background-image: url(../../assets/img/tv-show-type.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .no-rating-icon-wrapper {
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-left: auto;
+
+    .no-rating-icon {
+      width: 30px;
+      height: 30px;
+
+      background-image: url(../../assets/img/products/actions/gradeless-white.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .rating-icon-wrapper {
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+  }
+
+  .poster-fogging {
+    position: absolute;
+    width: 218px;
+    height: 331px;
+    border-radius: 5px;
+    z-index: -1;
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  .poster {
+    position: absolute;
+    width: 218px;
+    height: 331px;
+    z-index: -2;
+  }
+
+  .poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
 }
 
 .icon {
@@ -55,143 +129,71 @@
   align-items: center;
 }
 
-.play-icon-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  position: absolute;
-}
-
-.film-type-icon-wrapper {
-  width: 40px;
-  height: 30px;
-  margin-top: 8px;
-  margin-left: 15px;
-
-  .movie-type-icon {
-    width: 40px;
-    height: 30px;
-
-    background-image: url(../../assets/img/movie-type.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  .tvshow-type-icon {
-    width: 40px;
-    height: 30px;
-
-    background-image: url(../../assets/img/tv-show-type.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-
-.no-rating-icon-wrapper {
-  margin-top: 8px;
-  margin-right: 5px;
-  margin-left: auto;
-  width: 40px;
-  height: 30px;
-
-  .no-rating-icon {
-    width: 30px;
-    height: 30px;
-
-    background-image: url(../../assets/img/products/actions/gradeless-white.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-
-.rating-icon-wrapper {
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-left: auto;
-  width: 30px;
-  height: 30px;
-}
-
-.play-icon-background {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .play-icon {
-    width: 24px;
-    height: 24px;
-    background: url(../../assets/img/play-button.svg) no-repeat;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.stats-wrapper {
+.grid-view-stats-wrapper {
   width: 100%;
   height: 56px;
   display: flex;
+
+  .stats-icon-wrapper {
+    width: 55px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stats-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #010b13;
+    font-family: "Proxima Nova Bold";
+  }
+
+  .share-button {
+    margin-top: 27px;
+  }
+  
+  .share-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../assets/img/products/actions/share.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .comments-icon {
+    width: 22px;
+    height: 22px;
+    background-image: url(../../assets/img/products/actions/comment.svg);
+    background-repeat: no-repeat;
+  }
+  
+  .ratings-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .gradeless-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../assets/img/products/actions/gradeless.svg);
+  
+    background-repeat: no-repeat;
+  }
+  
+  .likes-icon {
+    width: 20px;
+    height: 18px;
+    background-image: url(../../assets/img/products/actions/heart.svg);
+    background-repeat: no-repeat;
+  }
 }
 
-.stats-icon-wrapper {
-  width: 55px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.stats-number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 13px;
-  color: #010b13;
-  font-family: "Proxima Nova Bold";
-}
 
-.share-button {
-  margin-top: 27px;
-}
 
-.share-icon {
-  width: 20px;
-  height: 20px;
-  background-image: url(../../assets/img/products/actions/share.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
 
-.comments-icon {
-  width: 22px;
-  height: 22px;
-  background-image: url(../../assets/img/products/actions/comment.svg);
-  background-repeat: no-repeat;
-}
-
-.ratings-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.gradeless-icon {
-  width: 20px;
-  height: 20px;
-  background-image: url(../../assets/img/products/actions/gradeless.svg);
-
-  background-repeat: no-repeat;
-}
-
-.likes-icon {
-  width: 20px;
-  height: 18px;
-  background-image: url(../../assets/img/products/actions/heart.svg);
-  background-repeat: no-repeat;
-}
